@@ -1,0 +1,36 @@
+
+Vagrantfile and bash provisioning script for centos/7 from upstream
+
+ - this sets up a GNOME Desktop with virtual box guest additions
+
+
+To run:
+
+ - do a 'vagrant up' which will create the DVD drive and start provisioning.
+
+ - when you see the VirtualBox gui, click Devices->InsertGuestAdditions CD Image
+    before the system starts provisioning.  The provisioning script needs it later.
+
+ - the provision script will bring the system up to a GNOME Desktop level
+    and set the system to a graphical target runlevel for the next reboot.
+
+ - you can login as vagrant and 'startx', or alternately just reboot to bring
+    the system up in a graphical desktop mode, fully configured and updated.
+
+
+Note: remember to enable shared cut+paste to/from the host via
+	Devices->SharedClipboard->Bidirectional in the gui  
+      similiarly you might want to enable drag'n'drop also via Devices
+
+
+
+
+
+Debugging notes:
+
+ - kernel updates can be problematic and sometimes you will get a message saying
+    the VBoxAdditions kernel service is not running.  In 'general' this is a mismatch
+    this can be fixed by rebooting to come up on the updated kernel, then reinstalling
+    the virtual box additions.   A reboot after that is not required, but is generally
+    a good idea to verify the system boots cleanly after initial provisioning.
+
