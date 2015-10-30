@@ -47,3 +47,6 @@ sudo umount /dev/sr0 /mnt
 # on the next reboot, the system will be running the graphical.target
 
 
+# uncomment to automate the reboot after provisioning
+sudo /sbin/reboot
+
