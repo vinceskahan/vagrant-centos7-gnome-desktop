@@ -3,8 +3,18 @@ Vagrantfile and bash provisioning script for centos/7 from upstream
 
  - this sets up a GNOME Desktop with virtual box guest additions
 
-
 To run:
+
+ - download the current box, unfortunately CentOS doesn't release monthly to hashicorp/atlas
+
+   vagrant box add \
+          http://cloud.centos.org/centos/7/vagrant/x86_64/images/CentOS-7-Vagrant-1509-x86_64-01.box \
+          --name centos/7-1509
+
+ - copy the Vagrantfile and provision.sh script into a subdirectory
+       (if you use a different box version above, edit your command and Vagrantfile to match)
+
+ - cd into that subdirectory
 
  - do a 'vagrant up' which will create the DVD drive and start provisioning.
 
@@ -16,15 +26,11 @@ To run:
 
  - you can login as vagrant and 'startx', or alternately just reboot to bring
     the system up in a graphical desktop mode, fully configured and updated.
+    The provision.sh script here takes the reboot for you currently...
 
-
-Note: remember to enable shared cut+paste to/from the host via
-	Devices->SharedClipboard->Bidirectional in the gui  
-      similiarly you might want to enable drag'n'drop also via Devices
-
-
-
-
+Notes:
+  - shared drag'n'drop and cut'n'paste are enabled via the Vagrantfile
+  - the provision script installs Xwindows and reboots at the end of provisioning (comment out/edit to taste)
 
 Debugging notes:
 
