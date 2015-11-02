@@ -16,7 +16,9 @@ To run:
 
  - cd into that subdirectory
 
- - do a 'vagrant up' which will create the DVD drive and start provisioning.
+ - do a 'vagrant up' which will create the DVD drive and start provisioning.  If the rsync fails
+    on cygwin due to /c/Users/yourusername not resolving, fake it with a symlink via the cygwin
+    shell, likely pointing /c => /cygdrive/c
 
  - when you see the VirtualBox gui, click Devices->InsertGuestAdditions CD Image
     before the system starts provisioning.  The provisioning script needs it later.
